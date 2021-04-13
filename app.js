@@ -22,8 +22,10 @@ const cards = [
     },
   ]; 
 
-  new Vue({
-    el: '#flashcard-app',
+
+
+new Vue({
+  el: '#flashcard-app',
     data: {
       cards: cards,
       newCard: {
@@ -32,6 +34,14 @@ const cards = [
         flipped: false
       },
       error: false
+  },
+  created() {
+    // Vue.$toast.open({
+    //   message: 'Oops! Flashcards need a front and a back.',
+    //   type: 'error',
+    //   position: 'top'
+    // });
+
     },
     methods: {
       toogleCard(card) {
@@ -40,7 +50,12 @@ const cards = [
       },
       addingCard() {
         if (this.newCard.front === '' || this.newCard.back === '') {
-           return this.error = true
+          //  return this.error = true
+          return Vue.$toast.open({
+            message: 'Oops! Flashcards need a front and a back.',
+            type: 'error',
+            position: 'top'
+          });
         }
         this.cards.push({
           front: this.newCard.front,

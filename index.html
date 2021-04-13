@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
   <title>Flash!</title>
 </head>
@@ -13,17 +15,17 @@
 <body>
   <div id="flashcard-app" class="container">
 
-    <h1>Flashcard App!</h1>
+    <h1 class="title">Flashcard App!</h1>
 
     <div class="flashcard-form">
-      <label for="front">Front
+      <label class="title" for="front">Front
         <input v-model="newCard.front" type="text" id="front">
       </label>
-      <label for="back">Back
+      <label class="title" for="back">Back
         <input v-on:keypress.enter="addingCard" v-model="newCard.back" type="text" id="back">
       </label>
       <button v-on:click="addingCard">Add a New Card</button>
-      <span v-show="error" class="error">Oops! Flashcards need a front and a back.</span>
+      <!-- <span v-show="error" class="error">Oops! Flashcards need a front and a back.</span> -->
     </div>
 
     <ul class="flashcard-list">
@@ -45,6 +47,11 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
+
+  <script>
+    Vue.use(VueToast);
+  </script>
   <script src="app.js"></script>
 </body>
 

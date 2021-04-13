@@ -2,7 +2,15 @@ body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
   }
-  
+  html{
+    background-color: #87CEEB;
+  }
+  .title{
+    color: white
+  }
+  label{
+    color:white;
+  }
   ul {
     padding-left: 0;
     display: flex;
