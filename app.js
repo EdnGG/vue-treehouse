@@ -77,9 +77,12 @@ knowing the index of the object we passed... this.cards.indexOf(card)
 splice takes the index of the element we're gonna delete, and as second parameter we pass the number of elements we're gonna delete
 */
         // this.cards.splice(this.cards.indexOf(card), 1)
+        
         this.cards.splice(index, 1)
+        Vue.$toast.success( 'Card deleted', {
+          position: 'bottom'
+        });
       // }
-      // console.log('cards', this.cards.indexOf(card))
       }
     }
   });
